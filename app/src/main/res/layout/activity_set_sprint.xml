@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:animateLayoutChanges="true">
+
+    <TextView
+            android:id="@+id/tv_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/mMedium"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@color/application_primary"
+            android:textSize="@dimen/textSizeLarge"
+            android:text="Назначение спринта"/>
+
+    <LinearLayout
+            android:id="@+id/sprint_start_picker"
+            android:layout_below="@id/tv_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/mXXLarge"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/sprint_start_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSizeH3"
+                android:text="Начало спринта"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/mXSmall"
+                android:background="@color/view_line_color"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/sprint_end_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sprint_start_picker"
+            android:layout_marginStart="@dimen/mXXLarge"
+            android:layout_marginEnd="@dimen/mXXLarge"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/sprint_end_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSizeH3"
+                android:text="Конец спринта"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/mXSmall"
+                android:background="@color/view_line_color"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:id="@+id/rl_add_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mSmall"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/sprint_end_picker">
+
+        <ImageView
+                android:id="@+id/iv_add_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_add"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_add_task"
+                android:text="Добавить таск"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_tasks_added"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_add_task"
+            android:layout_above="@+id/btn_create"
+            android:layout_marginStart="@dimen/mMedium"
+            android:layout_marginEnd="@dimen/mMedium"
+            android:layout_marginTop="@dimen/mMedium"
+            android:layout_marginBottom="@dimen/mSmall"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            tools:listitem="@layout/item_task_selected"/>
+
+    <LinearLayout
+            android:id="@+id/ll_scale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@drawable/bg_bottom_sheet"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/mXSmall"
+                android:textAlignment="center"
+                android:textSize="@dimen/textSizeRegular"
+                android:textStyle="bold"
+                android:text="Выберите таск:"/>
+
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_tasks_available"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginStart="@dimen/mMedium"
+                android:layout_marginEnd="@dimen/mMedium"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                tools:listitem="@layout/item_task"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mMedium"
+                android:layout_marginBottom="@dimen/mXSmall"
+                android:layout_marginEnd="@dimen/mMedium">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSizeRegular"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/rl1"
+                    android:text="Выберите сторипоинты"/>
+
+            <RelativeLayout
+                    android:id="@+id/rl1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:background="@drawable/bg_spinner"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true">
+
+                <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/spinner_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:overlapAnchor="false"
+                        android:gravity="center"
+                        android:dropDownVerticalOffset="4dp"
+                        android:textAlignment="center"
+                        android:background="@null"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mMedium"
+                android:layout_marginEnd="@dimen/mMedium"
+                android:layout_marginBottom="@dimen/mMedium">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/textSizeRegular"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/rl2"
+                    android:text="Выберите часы"/>
+
+            <RelativeLayout
+                    android:id="@+id/rl2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:background="@drawable/bg_spinner"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true">
+
+                <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/spinner_hours"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:overlapAnchor="false"
+                        android:gravity="center"
+                        android:dropDownVerticalOffset="4dp"
+                        android:textAlignment="center"
+                        android:background="@null"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_add_task"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:translationZ="-2dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_button"
+                android:stateListAnimator="@null"
+                android:text="Добавить"
+                android:textColor="#FFF"
+                android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_create"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:translationZ="-2dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rounded_button"
+            android:stateListAnimator="@null"
+            android:text="Назначить"
+            android:textColor="#FFF"
+            android:textAllCaps="false"/>
+
+
+</RelativeLayout>

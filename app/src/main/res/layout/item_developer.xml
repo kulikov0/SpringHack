@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" xmlns:tools="http://schemas.android.com/tools">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/developer_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="@dimen/mXSmall"
+            tools:src="@drawable/ic_launcher_background"/>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/developer_photo"
+            android:layout_marginStart="@dimen/mXXLarge"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/tv_developer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSizeH3"
+                tools:text="Developer Name"/>
+
+        <TextView
+                android:id="@+id/tv_developer_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/textSizeRegular"
+                tools:text="Android developer"/>
+
+        <TextView
+                android:id="@+id/tv_developer_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                tools:text="points"/>
+
+    </LinearLayout>
+
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/view_line_color"
+          android:layout_marginStart="@dimen/mXSmall"
+          android:layout_marginEnd="@dimen/mXSmall"
+          android:layout_below="@+id/developer_photo"/>
+
+</RelativeLayout>

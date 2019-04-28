@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginBottom="@dimen/mXSmall"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/mSmall">
+
+        <ImageView
+                android:id="@+id/iv_star"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:visibility="gone"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_star"/>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/mMedium"
+                android:layout_toEndOf="@id/iv_team_photo"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tv_team_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textSizeH3"
+                    android:textColor="@color/application_primary"
+                    android:layout_marginBottom="@dimen/mXSmall"
+                    tools:text="Team name very long"/>
+
+            <TextView
+                    android:id="@+id/tv_team_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/application_primary"
+                    android:layout_marginBottom="@dimen/mXSmall"
+                    tools:text="Team points"/>
+
+        </LinearLayout>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_team_photo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="@dimen/mXSmall"
+                android:layout_toEndOf="@+id/iv_star"
+                tools:src="@drawable/ic_launcher_background"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

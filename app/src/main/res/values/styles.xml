@@ -13,9 +13,24 @@
         <item name="android:textColor">@color/grey</item>
     </style>
 
-    <style name="TextInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
+    <style name="CustomDatePickerDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:dialogTheme">@style/MyDialogTheme</item>
+        <item name="android:datePickerStyle">@style/MyDatePicker</item>
+    </style>
+
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:datePickerStyle">@style/MyDatePicker</item>
+    </style>
+
+    <style name="MyDatePicker" parent="@android:style/Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+
+
+    <style name="TextInputLayoutAppearance" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="hintTextAppearance">@style/HintText</item>
         <item name="android:textColor">@color/black</item>
+        <item name="colorAccent">@color/black</item>
         <item name="android:textColorHint">@color/grey</item>
         <item name="colorControlActivated">@color/grey</item>
         <item name="colorControlHighlight">@color/grey</item>
@@ -40,7 +55,7 @@
 
     <style name="SeekBarStyle" parent="Widget.AppCompat.SeekBar">
         <item name="android:indeterminateOnly">false</item>
-        <item name="android:indeterminateDrawable">@color/colorPrimaryDark</item>
+        <item name="android:indeterminateDrawable">@color/application_primary_light</item>
         <item name="android:minHeight">5dip</item>
         <item name="android:maxHeight">5dip</item>
     </style>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_layout_bottom">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_user_photo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/mXLarge"
+                app:civ_border_width="4dp"
+                app:civ_border_color="@color/white"
+                tools:src="@drawable/ic_profile"/>
+
+        <ImageView
+                android:id="@+id/iv_exit"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_exit"
+                android:layout_margin="@dimen/mSmall"
+                android:layout_alignParentEnd="true"/>
+
+        <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mMedium"
+                android:layout_below="@+id/iv_user_photo"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeH2"
+                android:textAlignment="center"
+                android:text="Куликов Александр"/>
+
+        <TextView
+                android:id="@+id/tv_user_role"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_user_name"
+                android:layout_marginTop="@dimen/mXSmall"
+                android:layout_marginBottom="@dimen/mXSmall"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeRegular"
+                android:textAlignment="center"
+                android:text="Android developer"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mMedium"
+            android:layout_marginBottom="@dimen/mMedium"
+            android:layout_marginStart="@dimen/mXXLarge"
+            android:layout_marginEnd="@dimen/mXXLarge"
+            app:cardElevation="1dp"
+            app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/mSmall"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/textSizeH2"
+                    android:text="Мой баланс:"/>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/mMedium"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/tv_bonus_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/textSizeLarge"
+                        android:textStyle="bold"
+                        android:text="200"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/textSizeRegular"
+                        android:textStyle="bold"
+                        android:text="Бонусов"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ru.rhdv.springhackapplication.ui.custom.FadingEdgeLayout
+            android:id="@+id/fl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fading_edge="top|bottom"
+            app:fading_top="40dp"
+            app:fading_bottom="160dp">
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_bonus_history"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/mMedium"
+                android:layout_marginEnd="@dimen/mMedium"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                tools:listitem="@layout/item_bonus_history"/>
+
+
+    </ru.rhdv.springhackapplication.ui.custom.FadingEdgeLayout>
+
+</LinearLayout>

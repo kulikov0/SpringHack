@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:tools="http://schemas.android.com/tools">
+
+
+    <TextView
+            android:id="@+id/tv_task_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/mMedium"
+            android:textSize="@dimen/textSizeLarge"
+            android:textStyle="bold"
+            android:background="@drawable/bg_border"
+            android:textAlignment="center"
+            android:text="SpringHack"/>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_teams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_task_name"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/mMedium"
+            android:layout_marginEnd="@dimen/mMedium"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            tools:listitem="@layout/item_teams"
+            tools:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+
+        <ImageView
+                android:id="@+id/iv_create_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_teams"
+                android:layout_marginTop="@dimen/mXLarge"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical"
+                android:background="@drawable/ic_add"/>
+
+    <TextView
+            android:id="@+id/tv_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/red"
+            android:textSize="@dimen/textSizeRegular"
+            android:layout_margin="@dimen/mMedium"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:text="Выйти"/>
+
+    <ImageView
+            android:id="@+id/iv_settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="@dimen/mMedium"
+            android:background="@drawable/ic_settings"
+            android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

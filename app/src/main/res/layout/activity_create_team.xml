@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:animateLayoutChanges="true">
+
+    <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/mXXLarge"
+            android:background="@drawable/ic_add"/>
+
+    <ImageView
+            android:id="@+id/iv_create"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:layout_toEndOf="@+id/tv_create_team"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_check"/>
+
+
+    <TextView
+            android:id="@+id/tv_create_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/textSizeH3"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/mMedium"
+            android:text="Создать команду"/>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_team_mates_added"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_create_team"
+            android:layout_above="@+id/iv_add"
+            android:layout_marginStart="@dimen/mMedium"
+            android:layout_marginEnd="@dimen/mMedium"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            tools:listitem="@layout/item_team_mate"/>
+
+    <LinearLayout
+            android:id="@+id/ll_scale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@drawable/bg_bottom_sheet"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/mXSmall"
+                android:textAlignment="center"
+                android:textSize="@dimen/textSizeRegular"
+                android:textStyle="bold"
+                android:text="Выберите участника:"/>
+
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_team_mates_free"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/mMedium"
+                    android:layout_marginEnd="@dimen/mMedium"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    tools:listitem="@layout/item_team_mate"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

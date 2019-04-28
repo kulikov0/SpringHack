@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+            android:id="@+id/tv_task_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/mXSmall"
+            android:textStyle="bold"
+            android:textSize="@dimen/textSizeH3"
+            tools:text="Task name"/>
+
+    <TextView
+            android:id="@+id/tv_reach_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_task_name"
+            android:layout_marginStart="@dimen/mXSmall"
+            android:textSize="@dimen/textSizeRegular"
+            tools:text="01.04.2000 16:43"/>
+
+    <TextView
+            android:id="@+id/tv_bonus_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/mMedium"
+            android:textStyle="bold"
+            android:textColor="@color/application_primary"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/textSizeH2"
+            android:layout_alignParentEnd="true"
+            tools:text="+20"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/view_line_color"
+          android:layout_margin="@dimen/mXSmall"
+          android:layout_below="@+id/tv_reach_time"/>
+
+</RelativeLayout>
